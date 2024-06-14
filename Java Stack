@@ -1,0 +1,39 @@
+import java.util.*;
+class Solution{
+	
+	public static void main(String []argh)
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		while (sc.hasNext()) {
+			String input=sc.next();
+            Stack<Character> bal=new Stack<>();
+            for(int i=0;i<input.length();i++)
+            {
+                if(bal.isEmpty()==false)
+                {
+                switch(input.charAt(i))
+                {
+                    case '}': if(bal.peek()=='{')
+                                bal.pop();
+                                break;
+                    case ']':if(bal.peek()=='[')
+                                bal.pop();
+                                break;
+                    case ')':if(bal.peek()=='(')
+                                bal.pop();
+                                break;
+                    default:bal.push(input.charAt(i));
+                }
+            }
+            else{
+                bal.push(input.charAt(i));
+            }
+		}
+        System.out.println(bal.isEmpty());
+        }
+	}
+}
+
+
+
