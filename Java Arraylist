@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       ArrayList<List<Integer>> arr=new ArrayList<List<Integer>>();
+       for(int i=0;i<n;i++)
+       {
+            ArrayList<Integer> arr1=new ArrayList<>();
+           int d=sc.nextInt();
+           for(int j=0;j<d;j++)
+           {
+              
+               arr1.add(sc.nextInt());
+           } arr.add(arr1);
+       }
+       int q=sc.nextInt();
+       for(int i=0;i<q;i++)
+       {
+           int lnum=sc.nextInt();
+           int pos=sc.nextInt();
+           if(lnum>arr.size() || pos>arr.get(lnum-1).size())
+           {
+               System.out.println("ERROR!");
+               
+           }
+           else
+           {
+               System.out.println(arr.get(lnum-1).get(pos-1));
+           }
+       }
+    }
+}
